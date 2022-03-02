@@ -10,9 +10,6 @@ interface SampleDao {
     @Query("SELECT * FROM SampleData")
     fun getAllData(): LiveData<List<SampleEntity>>
 
-    @Query("SELECT * FROM sampledata WHERE id = id")
-    fun getById(id: Int): SampleEntity?
-
     @Insert
     suspend fun insert(item: List<SampleEntity>)
 
@@ -22,6 +19,6 @@ interface SampleDao {
     @Delete
     suspend fun delete(item: SampleEntity)
 
-    @Query("DELETE FROM sampledata")
+    @Query("DELETE FROM SampleData")
     suspend fun deleteAllRecord()
 }

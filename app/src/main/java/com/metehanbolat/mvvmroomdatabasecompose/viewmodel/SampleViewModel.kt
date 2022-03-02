@@ -49,7 +49,7 @@ class SampleViewModelFactory(private val application: Application): ViewModelPro
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         @Suppress("UNCHECKED_CAST")
         if (modelClass.isAssignableFrom(SampleViewModel::class.java)) {
-            return SampleViewModel(application = application) as T
+            return SampleViewModel(application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class")
     }
